@@ -38,11 +38,12 @@ export default class DesignForm extends Component {
   }
 
   render() {
+    //destructure state object into our output variables
     const { step } = this.state;
     const { email, username, password, firstName, lastName, interiorColor, interiorType,exteriorColor,exteriorType } = this.state;
     const values = { email, username, password, firstName, interiorColor, interiorType,exteriorColor,exteriorType}
 
-
+    //switch that increments or decrements on next/back button moves through component pages and captures user input
     const renderCurrentStep = () => {
 
         switch (step) {
@@ -97,12 +98,12 @@ export default class DesignForm extends Component {
               return (
                 <Success />
               )
-            // never forget the default case, otherwise VS code would be mad!
+            // never forget the default case
             default: 
                // do nothing
           }
         };
-                 
+        //Renders the dynamic image and creates form pages     
         return (<>
             <div className= "contentImageContainer"> 
                 <h1> render values from user select here</h1>
